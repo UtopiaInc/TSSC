@@ -2,14 +2,14 @@
   position: fixed;
   top: $navbar-height + 2px;
   bottom: 0;
-  left: 0;
+  #{$left}: 0;
   padding: 0;
   z-index: 1000;
   display: block;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   background-color: lighten($gray-lighter, 5);
-  border-right: 1px solid darken($gray-lighter, 5);
+  border-#{$right}: 1px solid darken($gray-lighter, 5);
 
   a {
     -webkit-font-smoothing: antialiased;
@@ -34,7 +34,7 @@
         .glyphicon {
           font-size: 18px;
           vertical-align: bottom;
-          padding-right: 5px;
+          padding-#{$right}: 5px;
         }
 
         .glyphicon.pull-right {
@@ -42,7 +42,7 @@
           line-height: 2;
           color: $gray-light;
           position: absolute;
-          right: 5px;
+          #{$right}: 5px;
           top: 50%;
           margin-top: -8px;
         }
@@ -105,18 +105,18 @@
     position: fixed;
     top: $navbar-height + 2px;
     bottom: 0;
-    left: 0;
+    #{$left}: 0;
     padding: 0;
     z-index: 1000;
     display: block;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    left: 50px;
+    #{$left}: 50px;
     min-width: 180px;
     visibility: visible;
     background-color: lighten($gray-lighter, 5);
     border-top: none;
-    border-right: 1px solid darken($gray-lighter, 5);
+    border-#{$right}: 1px solid darken($gray-lighter, 5);
     padding-top: 5px;
   }
 }
