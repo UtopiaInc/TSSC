@@ -12,8 +12,8 @@ cd ./sandbox
 
 cat <<RUBY >> Gemfile
 gem 'spree', path: '..'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
-
+gem 'spree_auth_devise', path: '../../ext/auth_devise'
+gem 'spree_i18n', path: '../../ext/i18n'
 group :test, :development do
   gem 'bullet'
   gem 'pry-byebug'
@@ -24,3 +24,4 @@ RUBY
 bundle install --gemfile Gemfile
 bundle exec rails g spree:install --auto-accept --user_class=Spree::User --enforce_available_locales=true
 bundle exec rails g spree:auth:install
+bundle exec rails g spree_i18n:install
