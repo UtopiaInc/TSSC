@@ -6,6 +6,9 @@ module Spree
       #   * :label to override link text, otherwise based on the first resource name (translated)
       #   * :route to override automatically determining the default route
       #   * :match_path as an alternative way to control when the tab is active, /products would match /admin/products, /admin/products/5/variants etc.
+
+      # TODO: Fix LTR direction
+
       def tab(*args)
         options = { label: args.first.to_s }
 
@@ -48,7 +51,7 @@ module Spree
         link_to url, :'data-toggle' => "collapse", :'data-parent' => '#sidebar' do
           content_tag(:span, nil, class: "icon icon-#{icon}") +
           content_tag(:span, " #{text}", class: 'text') +
-          content_tag(:span, nil, class: "icon icon-chevron-left pull-right")
+          content_tag(:span, nil, class: "icon icon-chevron-right pull-right")
         end
       end
 
@@ -65,7 +68,7 @@ module Spree
       def collapse_sidebar_link
         content_tag :div, class: "collapse-sidebar" do
           link_to "javascript:;", class: "js-collapse-sidebar" do
-            content_tag(:span, nil, class: "icon icon-chevron-right") +
+            content_tag(:span, nil, class: "icon icon-chevron-left") +
             content_tag(:span, "Collapse sidebar", class: "text")
           end
         end
@@ -87,7 +90,7 @@ module Spree
 
         select_tag(:per_page,
           options_for_select(per_page_options, params['per_page'] || per_page_default),
-          { id: "js-per-page-select", class: "form-control pull-right" })
+          { id: "js-per-page-select", class: "form-control pull-left" })
       end
 
       # finds class for a given symbol / string
