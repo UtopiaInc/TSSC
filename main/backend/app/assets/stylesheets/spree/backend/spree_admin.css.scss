@@ -1,7 +1,9 @@
 @import 'global/variables';
+@import 'global/directional';
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'bootstrap-rtl';
 
 @import 'components/sidebar';
 @import 'components/tables';
