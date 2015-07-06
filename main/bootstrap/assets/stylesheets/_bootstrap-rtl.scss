@@ -41,3 +41,6 @@
 
 // Utility classes
 @import "bootstrap/rtl/utilities";
+
+// Set page direction to RTL in order to use by directional-scss
+$dir: rtl !default;

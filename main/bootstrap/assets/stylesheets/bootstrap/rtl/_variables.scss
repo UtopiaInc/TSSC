@@ -3,5 +3,30 @@
 // --------------------------------------------------
 
 
+//== Custom fonts
+//
+//## Specify custom location and filename of the included custom font. Useful for those including Bootstrap via Bower.
+
+//** Load fonts from this directory.
+
+// [converter] Asset helpers such as Sprockets and Node.js Mincer do not resolve relative paths
+$custom-font-path: if($bootstrap-sass-asset-helper, "custom/", "../fonts/custom/") !default;
+
+//** File name for all font files.
+$custom-font-name:          "iraniansans" !default;
+//** Element ID within SVG font file.
+$custom-font-svg-id:        $custom-font-name !default;
+
+
+// Import the fonts
+@font-face {
+  font-family: 'Iranian Sans';
+  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$custom-font-path}#{$custom-font-name}.eot'), '#{$custom-font-path}#{$custom-font-name}.eot'));
+  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$custom-font-path}#{$custom-font-name}.eot?#iefix'), '#{$custom-font-path}#{$custom-font-name}.eot?#iefix')) format('embedded-opentype'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$custom-font-path}#{$custom-font-name}.woff'), '#{$custom-font-path}#{$custom-font-name}.woff')) format('woff'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$custom-font-path}#{$custom-font-name}.ttf'), '#{$custom-font-path}#{$custom-font-name}.ttf')) format('truetype'),
+       url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$custom-font-path}#{$custom-font-name}.svg##{$custom-font-svg-id}'), '#{$custom-font-path}#{$custom-font-name}.svg##{$custom-font-svg-id}')) format('svg');
+}
+
 //== Media Objects on pull-left/pull-right + flip
 //REMOVED @media-pull-margin: 10px;  
