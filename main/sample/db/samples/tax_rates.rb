@@ -1,9 +1,9 @@
-north_america = Spree::Zone.find_by_name!("North America")
-clothing = Spree::TaxCategory.find_by_name!("Clothing")
+default_zone = Spree::Zone.find_by_name!("پیش‌فرض")
+vat_tax = Spree::TaxCategory.find_by_name!("مالیات بر ارزش افزوده (VAT)")
 tax_rate = Spree::TaxRate.create(
-  :name => "North America",
-  :zone => north_america, 
-  :amount => 0.05,
-  :tax_category => clothing)
+  :name => "مالیات پیش‌فرض",
+  :zone => default_zone, 
+  :amount => 0.06,
+  :tax_category => vat_tax)
 tax_rate.calculator = Spree::Calculator::DefaultTax.create!
 tax_rate.save!
